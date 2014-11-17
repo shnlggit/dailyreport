@@ -45,7 +45,7 @@ CREATE TABLE `reports` (
   `userid` int(10) unsigned NOT NULL,
   `projectid` int(10) unsigned DEFAULT NULL,
   `date` date NOT NULL,
-  `context` text,
+  `content` text NOT NULL,
   PRIMARY KEY (`reportid`),
   UNIQUE KEY `reportid_UNIQUE` (`reportid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -86,4 +86,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-17 16:10:03
+-- Dump completed on 2014-11-17 16:56:54
