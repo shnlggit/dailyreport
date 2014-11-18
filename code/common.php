@@ -1,5 +1,7 @@
 <?php
 require_once 'debugUtil.php';
+
+define ( 'HOST_NAME', 'localhost' );
 class Common {
 	/**
 	 * open error page and show message
