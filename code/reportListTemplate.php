@@ -17,6 +17,7 @@
 				<td>2014-11-11</td>
 				<td>testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest</td>
 			</tr>
+			<?php $this->buildCols();?>
 		</tbody>
 	</table>
 </body>
