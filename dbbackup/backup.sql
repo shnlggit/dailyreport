@@ -48,7 +48,7 @@ CREATE TABLE `reports` (
   `content` text NOT NULL,
   PRIMARY KEY (`reportid`),
   UNIQUE KEY `reportid_UNIQUE` (`reportid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,11 +62,11 @@ CREATE TABLE `users` (
   `userid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(45) NOT NULL,
   `password` varchar(45) DEFAULT NULL,
-  `admin` int(10) unsigned zerofill NOT NULL,
+  `admin` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`userid`),
   UNIQUE KEY `userid_UNIQUE` (`userid`),
   UNIQUE KEY `username_UNIQUE` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -86,4 +86,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-11-17 16:56:54
+-- Dump completed on 2014-11-18 11:03:15
