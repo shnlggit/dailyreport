@@ -1,6 +1,6 @@
 <?php
 require_once ("baseProcessor.php");
-require_once ("reportInputView.php");
+require_once ("../code/view/reportInputView.php");
 class MenuReportInputProcessor extends BaseProcessor {
 	/**
 	 */

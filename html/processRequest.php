@@ -1,9 +1,9 @@
 <?php
 require_once '../code/debugUtil.php';
-require_once '../code/reportInputProcessor.php';
-require_once '../code/menuReportInputProcessor.php';
-require_once '../code/menuReportListProcessor.php';
-require_once '../code/errorView.php';
+require_once '../code/processor/reportInputProcessor.php';
+require_once '../code/processor/menuReportInputProcessor.php';
+require_once '../code/processor/menuReportListProcessor.php';
+require_once '../code/view/errorView.php';
 
 if (isset ( $_POST ['requestClass'] )) {
 	DebugUtil::log ( 'post: ' );

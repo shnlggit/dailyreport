@@ -2,6 +2,6 @@
 require_once 'baseView.php';
 class ReportInputView extends BaseView {
 	public function build() {
-		include('reportInputTemplate.php');
+		include('../code/template/reportInputTemplate.php');
 	}
 }

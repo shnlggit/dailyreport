@@ -1,6 +1,6 @@
 <?php
-require_once ("debugUtil.php");
-require_once ("errorView.php");
+require_once ("../code/debugUtil.php");
+require_once ("../code/view/errorView.php");
 class BaseProcessor {
 	protected $db;
 	protected function dbconnect() {
