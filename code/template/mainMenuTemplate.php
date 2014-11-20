@@ -4,9 +4,12 @@
 <title>Main menu</title>
 </head>
 <body>
-	<a href="processRequest.php?type=menuReportInput">create new report</a>
+	<?php $this->buildUserPanel();?>
+	<a href="<?php echo BASE_URL?>/processRequest.php?type=menuReportInput">create
+		new report</a>
 	<br>
-	<a href="processRequest.php?type=menuReportList">reports list</a>
+	<a href="<?=BASE_URL?>/processRequest.php?type=menuReportList">reports
+		list</a>
 	<br>
 </body>
 </html>

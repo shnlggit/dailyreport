@@ -1,14 +1,14 @@
 <?php
 require_once 'debugUtil.php';
 
-define ( 'HOST_NAME', 'localhost' );
+define ( 'BASE_URL', 'http://localhost/daily_report' );
 class Common {
 	/**
 	 * open error page and show message
 	 *
 	 * @param unknown $msg        	
 	 */
-	public function showError($msg) {
+	public static function showError($msg) {
 		$err = new ErrorView ();
 		$err->build ( $msg );
 		exit ();
@@ -19,7 +19,15 @@ class Common {
 	 * @param int $timestamp        	
 	 * @return string
 	 */
-	public function dateString($timestamp) {
+	public static function dateString($timestamp) {
 		return date ( 'Y-m-d', $timestamp );
+	}
+	/**
+	 * start session if not
+	 */
+	public static function startSession() {
+		if (session_status () == PHP_SESSION_NONE) {
+			session_start ();
+		}
 	}
 }

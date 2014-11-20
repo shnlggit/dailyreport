@@ -4,7 +4,8 @@
 <title>Daily report</title>
 </head>
 <body>
-	<form action="processRequest.php" method="post">
+	<?php $this->buildUserPanel();?>
+	<form action="<?=BASE_URL?>/processRequest.php" method="post">
 		<input name="requestClass" value="ReportInput" type="hidden">
 		<table style="text-align: left;" border="1" cellpadding="2"
 			cellspacing="2">

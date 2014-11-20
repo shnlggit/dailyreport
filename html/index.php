@@ -1,4 +1,5 @@
 <?php
-require_once("../code/view/mainMenuView.php");
-	$man = new MainMenuView();
-	$man->build();
+require_once ("../code/processor/indexProcessor.php");
+
+$man = new IndexProcessor ();
+$man->process ();

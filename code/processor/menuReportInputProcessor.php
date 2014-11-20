@@ -5,6 +5,8 @@ class MenuReportInputProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {
+		Common::startSession();
+		
 		$v = new ReportInputView ();
 		$v->build ();
 	}

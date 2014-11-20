@@ -1,6 +1,8 @@
 <?php
 require_once ("../code/debugUtil.php");
+require_once ("../code/common.php");
 require_once ("../code/view/errorView.php");
+require_once ("../code/userManager.php");
 class BaseProcessor {
 	protected $db;
 	protected function dbconnect() {

@@ -1,6 +1,5 @@
 <?php
 require_once ("baseProcessor.php");
-require_once ("../code/common.php");
 class ReportInputProcessor extends BaseProcessor {
 	/**
 	 */

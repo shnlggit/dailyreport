@@ -4,7 +4,8 @@
 <title>Report list</title>
 </head>
 <body>
-	<a href="index.php">Back to main menu</a>
+	<?php $this->buildUserPanel();?>
+	<a href="<?=BASE_URL?>">Back to main menu</a>
 	<br>
 	<table style="text-align: left;" border="1" cellpadding="2"
 		cellspacing="2">

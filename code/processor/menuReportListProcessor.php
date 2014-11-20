@@ -6,6 +6,8 @@ class MenuReportListProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {
+		Common::startSession();
+		
 		$this->dbconnect ();
 		
 		$result = $this->getList ();
@@ -25,18 +27,16 @@ class MenuReportListProcessor extends BaseProcessor {
 	}
 	private function getList() {
 		$query = "SELECT users.username,reports.date,reports.content FROM projectdb.reports,projectdb.users WHERE reports.userid=users.userid";
-		//DebugUtil::logln ( $query );
+		// DebugUtil::logln ( $query );
 		$result = $this->getDb ()->query ( $query );
-		//DebugUtil::log ( "result:" );
-		//DebugUtil::logln ( $result );
+		// DebugUtil::log ( "result:" );
+		// DebugUtil::logln ( $result );
 		if ($result && $result->num_rows > 0) {
-			if ($result->num_rows > 0) {
-				//DebugUtil::logln ( "found" );
-				// found user
-				return $result;
-			}
+			// DebugUtil::logln ( "found" );
+			// found user
+			return $result;
 		} else {
-			//DebugUtil::logln ( "not found" );
+			// DebugUtil::logln ( "not found" );
 		}
 		return null;
 	}
