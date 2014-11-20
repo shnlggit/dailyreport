@@ -5,8 +5,11 @@
 </head>
 <body>
 	<?php $this->buildUserPanel();?>
+	<a href="<?php echo BASE_URL?>/processRequest.php?type=EditReport">create
+		new report</a>
+	<br>
 	<form action="<?=BASE_URL?>/processRequest.php" method="post">
-		<input name="requestClass" value="ReportInput" type="hidden">
+		<input name="requestClass" value="SaveReportInput" type="hidden">
 		<table style="text-align: left;" border="1" cellpadding="2"
 			cellspacing="2">
 			<tbody>

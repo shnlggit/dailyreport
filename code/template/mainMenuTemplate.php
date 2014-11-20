@@ -5,10 +5,10 @@
 </head>
 <body>
 	<?php $this->buildUserPanel();?>
-	<a href="<?php echo BASE_URL?>/processRequest.php?type=menuReportInput">create
+	<a href="<?php echo BASE_URL?>/processRequest.php?type=EditReport">create
 		new report</a>
 	<br>
-	<a href="<?=BASE_URL?>/processRequest.php?type=menuReportList">reports
+	<a href="<?=BASE_URL?>/processRequest.php?type=ReportList">reports
 		list</a>
 	<br>
 </body>

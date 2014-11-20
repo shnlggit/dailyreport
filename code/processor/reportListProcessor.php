@@ -2,7 +2,7 @@
 require_once ("baseProcessor.php");
 require_once ("../code/view/reportListView.php");
 require_once ("../code/view/notFoundView.php");
-class MenuReportListProcessor extends BaseProcessor {
+class ReportListProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {

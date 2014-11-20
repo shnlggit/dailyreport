@@ -1,8 +1,8 @@
 <?php
 require_once '../code/debugUtil.php';
-require_once '../code/processor/reportInputProcessor.php';
-require_once '../code/processor/menuReportInputProcessor.php';
-require_once '../code/processor/menuReportListProcessor.php';
+require_once '../code/processor/saveReportProcessor.php';
+require_once '../code/processor/editReportProcessor.php';
+require_once '../code/processor/reportListProcessor.php';
 require_once '../code/processor/loginProcessor.php';
 require_once '../code/processor/logoutProcessor.php';
 require_once '../code/view/errorView.php';

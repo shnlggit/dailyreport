@@ -2,7 +2,7 @@
 require_once ("baseProcessor.php");
 require_once ("../code/view/mainMenuView.php");
 require_once ("../code/userManager.php");
-class IndexProcessor extends BaseProcessor {
+class MainMenuProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {

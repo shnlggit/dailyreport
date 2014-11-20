@@ -1,6 +1,6 @@
 <?php
 require_once ("baseProcessor.php");
-require_once ("indexProcessor.php");
+require_once ("mainMenuProcessor.php");
 class LoginProcessor extends BaseProcessor {
 	private $user;
 	private $password;
@@ -61,7 +61,7 @@ class LoginProcessor extends BaseProcessor {
 					$result->free ();
 					if (UserManager::isLoggedIn ()) {
 						//DebugUtil::logln ( "logged in" );
-						$v = new IndexProcessor ();
+						$v = new MainMenuProcessor ();
 						$v->process ();
 					} else {
 						//DebugUtil::logln ( "not logged in" );

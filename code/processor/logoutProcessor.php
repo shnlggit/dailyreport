@@ -10,7 +10,7 @@ class LogOutProcessor extends BaseProcessor {
 			UserManager::logout ();
 		}
 		
-		$p = new IndexProcessor ();
+		$p = new MainMenuProcessor ();
 		$p->process ();
 	}
 }

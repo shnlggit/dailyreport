@@ -1,5 +1,5 @@
 <?php
-require_once ("../code/processor/indexProcessor.php");
+require_once ("../code/processor/mainMenuProcessor.php");
 
-$man = new IndexProcessor ();
+$man = new MainMenuProcessor ();
 $man->process ();
