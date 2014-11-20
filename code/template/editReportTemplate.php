@@ -5,8 +5,7 @@
 </head>
 <body>
 	<?php $this->buildUserPanel();?>
-	<a href="<?php echo BASE_URL?>/processRequest.php?type=EditReport">create
-		new report</a>
+	<a href="<?=BASE_URL?>/processRequest.php?type=ReportList">reports list</a>
 	<br>
 	<form action="<?=BASE_URL?>/processRequest.php" method="post">
 		<input name="requestClass" value="SaveReportInput" type="hidden">

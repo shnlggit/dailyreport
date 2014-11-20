@@ -6,7 +6,7 @@ class MainMenuProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {
-		Common::startSession();
+		Common::startSession ();
 		if (! UserManager::isLoggedIn ()) {
 			UserManager::showLogin ();
 			return;
