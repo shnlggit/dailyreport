@@ -27,16 +27,16 @@ class ReportListProcessor extends BaseProcessor {
 	}
 	private function getList() {
 		$query = "SELECT users.username,reports.date,reports.content FROM projectdb.reports,projectdb.users WHERE reports.userid=users.userid";
-		// DebugUtil::logln ( $query );
+		// DebugUtil::log ( $query );
 		$result = $this->getDb ()->query ( $query );
 		// DebugUtil::log ( "result:" );
-		// DebugUtil::logln ( $result );
+		// DebugUtil::log ( $result );
 		if ($result && $result->num_rows > 0) {
-			// DebugUtil::logln ( "found" );
+			// DebugUtil::log ( "found" );
 			// found user
 			return $result;
 		} else {
-			// DebugUtil::logln ( "not found" );
+			// DebugUtil::log ( "not found" );
 		}
 		return null;
 	}

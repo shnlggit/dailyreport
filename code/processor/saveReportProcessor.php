@@ -19,10 +19,10 @@ class SaveReportProcessor extends BaseProcessor {
 			if ($userid < 0) {
 				$userid = $this->createUser ( $user );
 			}
-			DebugUtil::logln ( 'userid:' . $userid );
+			//DebugUtil::log ( 'userid:' . $userid );
 			
 			$date = mktime ( 0, 0, 0, $month, $day, $year );
-			DebugUtil::logln ( Common::dateString ( $date ) );
+			//DebugUtil::log ( Common::dateString ( $date ) );
 			
 			$this->saveReport ( $userid, $date, $content );
 			
@@ -54,23 +54,22 @@ class SaveReportProcessor extends BaseProcessor {
 	 */
 	private function findUser($name) {
 		$query = "SELECT * FROM `users` WHERE `username`='" . $name . "'";
-		DebugUtil::logln ( $query );
+		//DebugUtil::log ( $query );
 		$result = $this->getDb ()->query ( $query );
-		DebugUtil::log ( "result:" );
-		DebugUtil::logln ( $result );
+		//DebugUtil::log ( $result );
 		if ($result && $result->num_rows > 0) {
 			if ($result->num_rows > 0) {
-				DebugUtil::logln ( "found" );
+				//DebugUtil::log ( "found" );
 				// found user
 				$row = $result->fetch_array ();
-				DebugUtil::logln ( $row );
+				//DebugUtil::log ( $row );
 				$result->free ();
 				return $row ['userid'];
 			} else {
 				$result->free ();
 			}
 		} else {
-			DebugUtil::logln ( "not found" );
+			//DebugUtil::log ( "not found" );
 		}
 		return -1;
 	}
@@ -85,7 +84,7 @@ class SaveReportProcessor extends BaseProcessor {
 		if ($result) {
 			return findUser ( $name );
 		} else {
-			DebugUtil::logln ( "create user failed!" );
+			//DebugUtil::log ( "create user failed!" );
 		}
 		return - 1;
 	}
@@ -97,12 +96,12 @@ class SaveReportProcessor extends BaseProcessor {
 	 */
 	private function saveReport($userid, $date, $content) {
 		$query = "INSERT INTO `reports` (`userid`, `date`, `content`) VALUES ('" . $userid . "', '" . Common::dateString ( $date ) . "', '" . $content . "')";
-		DebugUtil::logln ( $query );
+		//DebugUtil::logln ( $query );
 		$result = $this->getDb ()->query ( $query );
 		if ($result) {
-			DebugUtil::logln ( 'Report saved.' );
+			//DebugUtil::log ( 'Report saved.' );
 		} else {
-			DebugUtil::logln ( 'Save report failed.' );
+			//DebugUtil::log ( 'Save report failed.' );
 		}
 	}
 }

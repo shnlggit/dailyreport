@@ -46,25 +46,25 @@ class LoginProcessor extends BaseProcessor {
 	/**
 	 */
 	private function login() {
-		//DebugUtil::logln ( sha1 ( $this->password ) );
+		//DebugUtil::log ( sha1 ( $this->password ) );
 		$query = "SELECT * FROM users WHERE username='" . $this->user . "'";
 		$result = $this->getDb ()->query ( $query );
 		if ($result) {
 			if ($result->num_rows > 0) {
 				$row = $result->fetch_assoc ();
-				//DebugUtil::logln ( $row );
+				//DebugUtil::log ( $row );
 				if ($row ['password'] == sha1 ( $this->password )) {
-					//DebugUtil::logln ( "pass" );
+					//DebugUtil::log ( "pass" );
 					$user = new User ();
 					$user->init ( $row );
 					UserManager::setLogIn ( $user );
 					$result->free ();
 					if (UserManager::isLoggedIn ()) {
-						//DebugUtil::logln ( "logged in" );
+						//DebugUtil::log ( "logged in" );
 						$v = new MainMenuProcessor ();
 						$v->process ();
 					} else {
-						//DebugUtil::logln ( "not logged in" );
+						//DebugUtil::log ( "not logged in" );
 					}
 				} else {
 					$result->free ();

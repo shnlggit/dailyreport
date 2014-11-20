@@ -1,11 +1,5 @@
 <?php
 define ( 'DEBUGMODE', true );
-define ( 'DEBUG_R', 0 );
-define ( 'DEBUG_G', 128 );
-define ( 'DEBUG_B', 0 );
-define ( 'ERROR_R', 128 );
-define ( 'ERROR_G', 0 );
-define ( 'ERROR_B', 0 );
 class DebugUtil {
 	public static $debugColor = [ 
 			0,
@@ -23,16 +17,6 @@ class DebugUtil {
 	 * @param unknown $msg        	
 	 */
 	public static function log($msg) {
-		if (! DEBUGMODE)
-			return;
-		
-		print_r ( $msg );
-	}
-	/**
-	 *
-	 * @param unknown $msg        	
-	 */
-	public static function logln($msg) {
 		if (! DEBUGMODE)
 			return;
 			

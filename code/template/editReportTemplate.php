@@ -8,14 +8,12 @@
 	<a href="<?=BASE_URL?>/processRequest.php?type=ReportList">reports list</a>
 	<br>
 	<form action="<?=BASE_URL?>/processRequest.php" method="post">
-		<input name="requestClass" value="SaveReportInput" type="hidden">
+		<input name="requestClass" value="SaveReport" type="hidden"> <input
+			name="name" value="<?php echo UserManager::getUser()->getName();?>"
+			type="hidden">
 		<table style="text-align: left;" border="1" cellpadding="2"
 			cellspacing="2">
 			<tbody>
-				<tr>
-					<td>Name</td>
-					<td><input name="name"></td>
-				</tr>
 				<tr>
 					<td>Date</td>
 					<td><input value="2014" maxlength="4" size="4" name="year">/<input
