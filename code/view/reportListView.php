@@ -2,12 +2,22 @@
 require_once 'baseView.php';
 class ReportListView extends BaseView {
 	private $qdata;
+	/**
+	 *
+	 * @see BaseView::build()
+	 */
 	public function build() {
 		include ('../code/template/reportListTemplate.php');
 	}
+	/**
+	 *
+	 * @param unknown $result        	
+	 */
 	public function setQueryResult($result) {
 		$this->qdata = $result;
 	}
+	/**
+	 */
 	private function buildCols() {
 		if (! isset ( $this->qdata )) {
 			echo '<tr><td>-</td></tr>';

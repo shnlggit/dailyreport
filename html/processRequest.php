@@ -1,11 +1,7 @@
 <?php
 require_once '../code/debugUtil.php';
-require_once '../code/processor/saveReportProcessor.php';
-require_once '../code/processor/editReportProcessor.php';
-require_once '../code/processor/reportListProcessor.php';
-require_once '../code/processor/loginProcessor.php';
-require_once '../code/processor/logoutProcessor.php';
 require_once '../code/view/errorView.php';
+require_once '../code/processor/processors.php';
 
 if (isset ( $_POST ['requestClass'] )) {
 	// DebugUtil::log ( 'post: ' );
