@@ -5,3 +5,5 @@ require_once '../code/processor/logoutProcessor.php';
 require_once '../code/processor/reportListProcessor.php';
 require_once '../code/processor/editReportProcessor.php';
 require_once '../code/processor/saveReportProcessor.php';
+require_once '../code/processor/changePasswordProcessor.php';
+require_once '../code/processor/savePasswordProcessor.php';

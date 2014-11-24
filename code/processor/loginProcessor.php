@@ -7,7 +7,7 @@ class LoginProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {
-		Common::startSession();
+		Common::startSession ();
 		
 		try {
 			$this->checkFillOut ();
@@ -23,6 +23,9 @@ class LoginProcessor extends BaseProcessor {
 		
 		try {
 			$this->login ();
+			
+			$p = new MainMenuProcessor ();
+			$p->process ();
 		} catch ( Exception $e ) {
 			Common::showError ( $e->getMessage () );
 			exit ();
@@ -46,36 +49,24 @@ class LoginProcessor extends BaseProcessor {
 	/**
 	 */
 	private function login() {
-		//DebugUtil::log ( sha1 ( $this->password ) );
-		$query = "SELECT * FROM users WHERE username='" . $this->user . "'";
+		// DebugUtil::log ( sha1 ( $this->password ) );
+		$query = "SELECT * FROM users WHERE username='" . $this->user . "' AND password='" . sha1 ( $this->password ) . "'";
 		$result = $this->getDb ()->query ( $query );
 		if ($result) {
 			if ($result->num_rows > 0) {
 				$row = $result->fetch_assoc ();
-				//DebugUtil::log ( $row );
-				if ($row ['password'] == sha1 ( $this->password )) {
-					//DebugUtil::log ( "pass" );
-					$user = new User ();
-					$user->init ( $row );
-					UserManager::setLogIn ( $user );
-					$result->free ();
-					if (UserManager::isLoggedIn ()) {
-						//DebugUtil::log ( "logged in" );
-						$v = new MainMenuProcessor ();
-						$v->process ();
-					} else {
-						//DebugUtil::log ( "not logged in" );
-					}
-				} else {
-					$result->free ();
-					throw new Exception ( "Wrong password!" );
-				}
+				// DebugUtil::log ( $row );
+				// DebugUtil::log ( "pass" );
+				$user = new User ();
+				$user->init ( $row );
+				UserManager::setLogIn ( $user );
+				$result->free ();
 			} else {
 				$result->free ();
-				throw new Exception ( "User not exist!" );
+				throw new Exception ( "User not exist or wrong password" );
 			}
 		} else {
-			throw new Exception ( "User not exist!" );
+			throw new Exception ( "Login error!" );
 		}
 	}
 }

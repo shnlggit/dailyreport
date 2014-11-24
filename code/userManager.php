@@ -1,7 +1,7 @@
 <?php
 require_once 'debugUtil.php';
-require_once 'view/loginView.php';
 require_once 'User.php';
+require_once 'view/loginView.php';
 class UserManager {
 	/**
 	 */
@@ -28,6 +28,8 @@ class UserManager {
 	public static function getUser() {
 		return $_SESSION ['valid_user'];
 	}
+	/**
+	 */
 	public static function logout() {
 		unset ( $_SESSION ['valid_user'] );
 	}

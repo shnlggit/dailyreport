@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>request test</title>
+<title>Login</title>
 </head>
 <body>
 	<form action="<?=BASE_URL?>/processRequest.php" method="post">

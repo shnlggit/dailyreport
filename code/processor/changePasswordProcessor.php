@@ -1,7 +1,7 @@
 <?php
-require_once ("baseProcessor.php");
-require_once ("../code/view/editReportView.php");
-class EditReportProcessor extends BaseProcessor {
+require_once "baseProcessor.php";
+require_once '../code/view/changePasswordView.php';
+class ChangePasswordProcessor extends BaseProcessor {
 	/**
 	 */
 	public function process() {
@@ -11,7 +11,7 @@ class EditReportProcessor extends BaseProcessor {
 			return;
 		}
 		
-		$v = new EditReportView ();
+		$v = new ChangePasswordView ();
 		$v->build ();
 	}
 }
