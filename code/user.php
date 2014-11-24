@@ -2,6 +2,7 @@
 class User {
 	private $name;
 	private $admin;
+	private $id;
 	/**
 	 *
 	 * @param unknown $data        	
@@ -9,6 +10,7 @@ class User {
 	public function init($data) {
 		$this->name = $data ['username'];
 		$this->admin = $data ['admin'];
+		$this->id = $data ['userid'];
 	}
 	/**
 	 *
@@ -31,7 +33,25 @@ class User {
 	public function isAdmin() {
 		return $this->admin;
 	}
+	/**
+	 *
+	 * @param unknown $b        	
+	 */
 	public function setAdmin($b) {
 		$this->admin = $b;
+	}
+	/**
+	 *
+	 * @return int
+	 */
+	public function getId() {
+		return $this->id;
+	}
+	/**
+	 *
+	 * @param int $id        	
+	 */
+	public function setId($id) {
+		$this->id = $id;
 	}
 }

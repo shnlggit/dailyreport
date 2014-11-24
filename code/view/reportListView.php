@@ -22,7 +22,7 @@ class ReportListView extends BaseView {
 		while ( isset ( $row ) ) {
 			echo '<tr>';
 			foreach ( $row as $key => $value ) {
-				echo '<td>' . $value . '</td>';
+				echo '<td>' . nl2br ( $value ) . '</td>';
 			}
 			echo '</tr>';
 			$row = $this->qdata->fetch_assoc ();
